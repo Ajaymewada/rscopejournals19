@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rscope</title>
+    <link id="themeColors" rel="stylesheet" href="assets/css/style.min.css" />
+    <link id="themeColors" rel="stylesheet" href="assets/jQuery-tagEditor-master/jquery.tag-editor.css" />
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assetstwo/images/favicon.png">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-theme="blue_theme" data-layout="vertical" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="text-nowrap logo-img">
+                        <img src="assets/images/profile/logo-dark.png" class="dark-logo" width="220" alt="" />
+                    </a>
+                    <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8 text-muted"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+                    <ul>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu"></span>
+                        </li>
+                    </ul>
+                    <ul id="sidebarnav"></ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            {% include './Header.html' %}
+            {% block header %}{% endblock %}
+            <!--  Header End -->
+            <div class="container-fluid">
+                <div class="row my-4">
+                    <h3>Artical Types</h3>
+                    <div class="col-md-12 col-sm-12 col-12 my-4" id="forarticletypesArea"></div>
+                    {% include './DescriptionAndKeywords.html' %}
+                    {% block metaPart %}{% endblock %}
+                  
+                    <div class="col-md-12 col-sm-12 col-12">
+                        <div class="alert alert-danger validationalert d-none" role="alert"></div>
+                        <button class="btn btn-primary primaryBtnCs float-end" onclick="saveData()">Save</button>
+                    </div>
+                    <div class="col-md-12 my-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include './MobileSideNavbar.html' %}
+    {% block MobileSideNavbar %}{% endblock %}
+    <!-- JS FILES -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--  core files -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/app.init.js"></script>
+    <script src="assets/js/app-style-switcher.js"></script>
+    <script src="assets/js/sidebarmenu.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!--  current page js files -->
+    <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <!-- <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script> -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
+    <script src="assets/jQuery-tagEditor-master/jquery.tag-editor.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sideNavCreater.js"></script>
+    <script src="js/ckEditorClass.js"></script>
+    <script src="js/articletypes.js"></script>
+</body>
+
+</html>

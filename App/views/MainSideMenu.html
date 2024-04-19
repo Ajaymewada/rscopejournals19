@@ -1,0 +1,173 @@
+{% block MainSideMenu %}
+
+<div class="edu-course-sidebar">
+  <div class="edu-course-widget widget-category">
+    <div class="inner">
+      <h1 class="widget-title">Journal Menu</h1>
+      <div class="content">
+        <ul
+          class="category-list"
+          style="
+            font-size: 10px;
+            font-weight: 100;
+            list-style-type: none;
+            padding-left: 0;
+          "
+        >
+          <li onclick="dynamicnavigation('aims-and-scope')">
+            <a
+              href="#"
+              class="kk"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Aims & Scope</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('editorial-board')">
+            <a
+              href="#"
+              class="kk"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Editorial Board</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('editorial-office')">
+            <a
+              href="#"
+              class="kk"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Editiorial Office</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="edu-course-sidebar">
+  <div class="edu-course-widget widget-category">
+    <div class="inner">
+      <h1 class="widget-title">Articles</h1>
+      <div class="content">
+        <ul
+          class="category-list"
+          style="
+            font-size: 10px;
+            font-weight: 100;
+            list-style-type: none;
+            padding-left: 0;
+          "
+        >
+          <li onclick="dynamicnavigation('current-issue')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Current Issue</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('all-issues')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >All Issues</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Special Issue</a
+            >
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="edu-course-sidebar">
+  <div class="edu-course-widget widget-category">
+    <div class="inner">
+      <h1 class="widget-title">Useful links</h1>
+      <div class="content">
+        <ul
+          class="category-list"
+          style="
+            font-size: 10px;
+            font-weight: 100;
+            list-style-type: none;
+            padding-left: 0;
+          "
+        >
+          <li onclick="dynamicnavigation('peer-review')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Peer Review</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('for-editors')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >For Editors</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('why-submit')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Why Submit ?</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('submissionchecklist')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Submission Checklist</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('article-types')">
+            <a
+              href="#"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Artical Types</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('author-instructions')">
+            <a
+              href="#"
+              class="kk"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Instructions for Authors</a
+            >
+          </li>
+          <li onclick="dynamicnavigation('article-processing-fee')">
+            <a
+              href="#"
+              class="kk"
+              style="font-size: 13px; display: block; padding-bottom: 5px"
+              >Article Processing Fee</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function dynamicnavigation(orgroute) {
+    console.log("orgroute : ", orgroute);
+    let JournalInfo = JSON.parse(localStorage.getItem("JournalInfo"));
+    if (JournalInfo && JournalInfo.JournalSlug) {
+      window.location.href = `/${JournalInfo.JournalSlug}/${orgroute}`;
+    }
+  }
+</script>
+
+{% endblock %}

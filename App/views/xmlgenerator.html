@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate XML File</title>
+    <link id="themeColors" rel="stylesheet" href="assets/css/style.min.css" />
+    <link
+      id="themeColors"
+      rel="stylesheet"
+      href="assets/jQuery-tagEditor-master/jquery.tag-editor.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assetstwo/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md-12">
+          <h1 class="bg-success p-3 text-white text-center">
+            Generate XML File
+          </h1>
+          <p class="text-danger my-3">Enter the url's separated by commas</p>
+          <textarea
+            class="form-control"
+            id="Urls"
+            name="textData"
+            placeholder="Enter Url's"
+            rows="13"
+          ></textarea>
+          <div class="w-100 d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary my-4 py-2 fs-4"
+              onclick="generateXMLFileDownload(event)"
+            >
+              Generate XML
+            </button>
+          </div>
+          <div class="alert alert-success validationalert d-none" role="alert">
+            XML File Downloaded Successfully!
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script>
+      function generateXMLFileDownload(e) {
+        e.preventDefault();
+        let urls = $("#Urls").val();
+        if (urls && urls !== "") {
+          urls = urls.split(",");
+          const url = "/generatexmlfile";
+          const requestOptions = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              listofurls: urls,
+            }),
+          };
+          fetch(url, requestOptions)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.text();
+            })
+            .then((data) => {
+              $(".validationalert").removeClass("d-none");
+              setTimeout(() => {
+                $(".validationalert").addClass("d-none");
+              }, 2000);
+              const blob = new Blob([data], { type: "application/xml" });
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = "rscopeurls.xml";
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+            });
+        }
+      }
+    </script>
+  </body>
+</html>

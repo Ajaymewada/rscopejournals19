@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assetstwo/images/favicon.png"
+    />
+    <!-- CSS
+	============================================ -->
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/icomoon.css" />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/remixicon.css" />
+    <link
+      rel="stylesheet"
+      href="../../assetstwo/css/vendor/magnifypopup.min.css"
+    />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/odometer.min.css" />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/lightbox.min.css" />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/animation.min.css" />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/jqueru-ui-min.css" />
+    <link
+      rel="stylesheet"
+      href="../../assetstwo/css/vendor/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../../assetstwo/css/vendor/tipped.min.css" />
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="../../assetstwo/css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body class="sticky-header">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <div id="edublink-preloader">
+      <div class="loading-spinner">
+        <div class="preloader-spin-1"></div>
+        <div class="preloader-spin-2"></div>
+      </div>
+      <div class="preloader-close-btn-wraper">
+        <span class="btn btn-primary preloader-close-btn">
+          Cancel Preloader</span
+        >
+      </div>
+    </div>
+
+    <div id="main-wrapper" class="main-wrapper">
+      <!--=====================================-->
+      <!--=        Header Area Start          =-->
+      <!--=====================================-->
+      {% include './MainHeader.html' %} {% block MainHeader %}{% endblock %}
+      <!--=====================================-->
+      <!--=        Event Area Start         =-->
+      <!--=====================================-->
+      <section class="event-details-area edu-section-gap">
+        <div class="container">
+          <div class="event-details">
+            <div class="edu-course-area course-area-1 section-gap-equal">
+              <div class="container">
+                <div class="row g-5">
+                  <div class="col-lg-2 d-none d-lg-block padding">
+                    {% include './MainSideMenu.html' %} {% block MainSideMenu
+                    %}{% endblock %}
+                  </div>
+
+                  <div class="col-lg-10 col-sm-12 mt-xs-5">
+                    <div
+                      class="edu-course course-style-4 course-style-8"
+                      id="edu-course"
+                      style="background-color: #fefefe"
+                    >
+                      <div class="inner mt-4 w-100" id="inner">
+                        <div class="content" id="content">
+                          <div class="bg_1 pt-lg-5 pb-lg-5">
+                            <div class="row">
+                              <div class="col-md-5 col-sm-12 col-xs-12">
+                                <span
+                                  class="display-5 text-white"
+                                  style="font-size: 17px; font-weight: bold"
+                                  id="journaltitlecontainerID"
+                                ></span>
+                                <p style="color: white; margin-top: 20px">
+                                  Discover the standout extensions that made our
+                                  year
+                                </p>
+                                <a
+                                  href="https://rems.rscope.org/"
+                                  target="_blank"
+                                  ><button
+                                    style="
+                                      border-radius: 20px;
+                                      background-color: transparent;
+                                      height: 40px;
+                                      width: auto;
+                                      font-size: 13px;
+                                      color: white;
+                                      margin-bottom: 10px;
+                                      border: 2px solid white;
+                                    "
+                                  >
+                                    Submit manuscript
+                                  </button></a
+                                >
+                              </div>
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <p style="color: white; font-weight: bolder">
+                                  Building Tomorrow's Solutions Together
+                                </p>
+                              </div>
+                              <div class="col-md-3 col-sm-6 col-xs-12">
+                                <h4 style="font-size: 17px; color: white">
+                                  ISSN:
+                                  <span
+                                    id="ISSNNOID"
+                                    style="font-size: 17px; color: white"
+                                  ></span>
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+
+                          <h1 class="title mt-5">
+                            <a
+                              style="
+                                font-size: 18px;
+                                color: #ef7720;
+                                margin-left: -10px;
+                              "
+                              >Editorial Office</a
+                            >
+                          </h1>
+                          <div class="row mt-5">
+                            <div class="flex_1">
+                              <div
+                                id="editorial_office_Container"
+                                class="background p-5"
+                              ></div>
+                            </div>
+
+                            <div class="flex_2">
+                              <div class="background">
+                                <h1 class="title">
+                                  <a
+                                    style="
+                                      font-size: 18px;
+                                      margin-top: 10px;
+                                      padding-left: 30px;
+                                      margin-bottom: -100px;
+                                    "
+                                    >Latest Articles</a
+                                  >
+                                </h1>
+                                <div id="rightSideNavContainer">
+                                  <div class="col-lg-12">
+                                    <div class="row">
+                                      <div class="inner">
+                                        <div
+                                          class="content"
+                                          style="margin-top: -15px"
+                                        >
+                                          <div>
+                                            <h6 class="title"></h6>
+                                            <div
+                                              style="
+                                                border-bottom: 2px solid #e0e0e0;
+                                                width: 80%;
+                                                margin-bottom: 15px;
+                                              "
+                                            ></div>
+                                          </div>
+                                          <p class="title">
+                                            <a
+                                              title="Acoustics"
+                                              class="cursor-pointer"
+                                              onclick="increaseViews('65fae5b9a02185737d96d947')"
+                                              style="font-size: 16px"
+                                              >Acoustics</a
+                                            >
+                                          </p>
+                                          <p style="margin-bottom: 5px"></p>
+                                          <p class="course-meta mt-3">
+                                            <strong
+                                              style="
+                                                margin-right: 5px;
+                                                font-weight: 200;
+                                                font-size: 13px;
+                                              "
+                                              >Author :</strong
+                                            >
+
+                                            <span
+                                              style="
+                                                color: #f07317;
+                                                margin-right: 5px;
+                                                font-size: 12px;
+                                                font-weight: 600;
+                                              "
+                                            >
+                                              <i
+                                                class="fa-regular fa-user"
+                                                style="
+                                                  color: black;
+                                                  padding: 0px;
+                                                  font-size: 10px;
+                                                  border-radius: 50px;
+                                                  margin-right: 3px;
+                                                "
+                                              ></i>
+                                              test
+                                            </span>
+                                          </p>
+                                          <p></p>
+                                          <div class="course-rating">
+                                            <span class="rating-count"></span>
+                                          </div>
+                                          <p
+                                            class=""
+                                            style="
+                                              color: gray;
+                                              font-size: 10px !important;
+                                            "
+                                          >
+                                            Foods 2024, 13(1), 151;
+                                            https://doi.org/10.3390/foods13010151
+                                            (registering DOI) - Mar 12, 1999
+                                          </p>
+
+                                          <a class="doi" style="font-size: 10px"
+                                            >doi: 10.3389/fnagi.2023.1340706</a
+                                          >
+
+                                          <ul
+                                            class="course-meta"
+                                            style="margin-top: 0px"
+                                          >
+                                            <li>
+                                              <span
+                                                class="date orange course-price1"
+                                                style="font-size: 10px"
+                                                >Published on Mar 12, 1999</span
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--=        Article Area end         =-->
+              <!--=        Article Area Start         =-->
+            </div>
+          </div>
+
+          <!--============== Page Nation start =======================-->
+        </div>
+      </section>
+
+      <!--============== Page Nation End =======================-->
+
+      <!--=        Footer Area Start          =-->
+
+      <!--=====================================-->
+      <!--=        Footer Area Start          =-->
+      <!--=====================================-->
+      <!-- Start Footer Area  -->
+      {% include './Footer.html' %} {% block Footer %}{% endblock %}
+      <!-- End Footer Area  -->
+
+      <!-- End Footer Area  -->
+    </div>
+
+    <div class="rn-progress-parent">
+      <svg
+        class="rn-back-circle svg-inner"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <!-- JS
+	============================================ -->
+    <!-- Modernizer JS -->
+    <script src="../../assetstwo/js/vendor/modernizr.min.js"></script>
+    <!-- Jquery Js -->
+    <script src="../../assetstwo/js/vendor/jquery.min.js"></script>
+    <script src="../../assetstwo/js/vendor/bootstrap.min.js"></script>
+    <script src="../../assetstwo/js/vendor/sal.min.js"></script>
+    <script src="../../assetstwo/js/vendor/backtotop.min.js"></script>
+    <script src="../../assetstwo/js/vendor/magnifypopup.min.js"></script>
+    <script src="../../assetstwo/js/vendor/jquery.countdown.min.js"></script>
+    <script src="../../assetstwo/js/vendor/odometer.min.js"></script>
+    <script src="../../assetstwo/js/vendor/isotop.min.js"></script>
+    <script src="../../assetstwo/js/vendor/imageloaded.min.js"></script>
+    <script src="../../assetstwo/js/vendor/lightbox.min.js"></script>
+    <script src="../../assetstwo/js/vendor/paralax.min.js"></script>
+    <script src="../../assetstwo/js/vendor/paralax-scroll.min.js"></script>
+    <script src="../../assetstwo/js/vendor/jquery-ui.min.js"></script>
+    <script src="../../assetstwo/js/vendor/swiper-bundle.min.js"></script>
+    <script src="../../assetstwo/js/vendor/svg-inject.min.js"></script>
+    <script src="../../assetstwo/js/vendor/vivus.min.js"></script>
+    <script src="../../assetstwo/js/vendor/tipped.min.js"></script>
+    <script src="../../assetstwo/js/vendor/smooth-scroll.min.js"></script>
+    <script src="../../assetstwo/js/vendor/isInViewport.jquery.min.js"></script>
+    <script src="plugins/fontawesome/js/all.min.js"></script>
+
+    <!-- <script src="../../assetstwo/js/mainaimsscope.js"></script> -->
+    <script src="../../assetstwo/js/MainEditorialOffice.js"></script>
+    <!-- <script src="../../assetstwo/js/mainCurrentIssue.js"></script> -->
+
+    <script>
+      // Add an event listener for each menu item
+      document
+        .getElementById("journalMenu")
+        .addEventListener("click", function () {
+          // Hide the Useful links and Articles
+          document.querySelector(".u").style.display = "none";
+          document.querySelector(".a").style.display = "none";
+        });
+
+      document
+        .getElementById("Usefullinks")
+        .addEventListener("click", function () {
+          // Hide the Journal Menu and Articles
+          document.querySelector(".pl-5").style.display = "none";
+          document.querySelector(".a").style.display = "none";
+        });
+
+      document
+        .getElementById("Articles")
+        .addEventListener("click", function () {
+          // Hide the Journal Menu and Useful links
+          document.querySelector(".pl-5").style.display = "none";
+          document.querySelector(".u").style.display = "none";
+        });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var journalMenu = document.getElementById("journalMenu");
+        var categoryList = document.querySelector(".category-list");
+
+        journalMenu.addEventListener("click", function () {
+          categoryList.style.display =
+            categoryList.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var journalMenu = document.getElementById("Usefullinks");
+        var u = document.querySelector(".u");
+
+        journalMenu.addEventListener("click", function () {
+          u.style.display = u.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var journalMenu = document.getElementById("Articles");
+        var a = document.querySelector(".a");
+
+        journalMenu.addEventListener("click", function () {
+          a.style.display = a.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+
+    <!-- Site Scripts -->
+    <script src="../../assetstwo/js/app.js"></script>
+  </body>
+</html>
+<!-- ?jhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->

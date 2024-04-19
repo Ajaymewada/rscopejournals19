@@ -1,0 +1,79 @@
+.primaryBtnCs {
+  height: 45px;
+  font-size: 16px;
+}
+.dashed-border {
+  border: 2px dashed #ccc;
+  padding: 20px;
+}
+.tag-editor {
+  min-height: 40px;
+  height: auto;
+  font-size: 20px;
+  border: 1px solid #d2cfcf;
+  border-radius: 6px;
+}
+.tag-editor .tag-editor-tag,
+.tag-editor-delete {
+  padding: 6px !important;
+}
+
+.loader {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 40%;
+  right: 40%;
+  border: 8px solid #5d87ff; /* Light blue color */
+  border-top: 8px solid transparent; /* Transparent top border */
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  width: 200px;
+  top: 30px; /* Adjust the positioning as needed */
+  left: 0;
+}
+
+.custom-tooltip::before {
+  content: "";
+  position: absolute;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+  top: -16px;
+  left: 5px;
+}
+.dark-logo {
+  width: 200px !important;
+  margin-top: 13px;
+  margin-bottom: -30px;
+}
+
+.text-ellipses-100 {
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editors Management</title>
+    <link id="themeColors" rel="stylesheet" href="assets/css/style.min.css" />
+    <link id="themeColors" rel="stylesheet" href="assets/jQuery-tagEditor-master/jquery.tag-editor.css" />
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assetstwo/images/favicon.png">
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+</head>
+
+<body>
+    <div class="preloader d-none">
+        <img src="assets/images/profile/logo-dark.png" alt="loader" class="lds-ripple img-fluid">
+    </div>
+
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-theme="blue_theme" data-layout="vertical" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="text-nowrap logo-img">
+                        <img src="assets/images/profile/logo-dark.png" class="dark-logo" width="220" alt="" />
+                    </a>
+                    <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8 text-muted"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+                    <ul>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu"></span>
+                        </li>
+                    </ul>
+                    <ul id="sidebarnav"></ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            {% include './Header.html' %}
+            {% block header %}{% endblock %}
+            <!--  Header End -->
+            <div class="container-fluid">
+                <div class="row my-4">
+                    <div class="col-12">
+                        <div class="col-lg-12 d-flex align-items-strech">
+                            <div class="card w-100">
+                                <div class="card-body">
+                                    <div class="loader d-none"></div>
+                                    <div class="d-sm-flex d-block align-items-center justify-content-between mb-7">
+                                        <div class="mb-3 mb-sm-0">
+                                            <h5 class="card-title fw-semibold">Editors Management</h5>
+                                            <p class="card-subtitle mb-0">Manage the editors data</p>
+                                        </div>
+                                        <div style="
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 400px;
+                                        ">
+                                            <input type="text" class="form-control fs-3" placeholder="Search By Name"
+                                                id="search" onchange="handleSearchOnChange(event)" style="margin-right: 10px;">
+                                            <div style="cursor: pointer;" onclick="searchData()">
+                                                <i class="ti ti-search"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p style="
+                                        float: right;
+                                        margin-top: -25px;
+                                        margin-right: 25px;
+                                        cursor: pointer;
+                                        display: inline;
+                                        color: red;" onclick="getData()">Clear Search</p>
+                                    <div class="table-responsive" style="width:100%;">
+                                        <table class="table align-middle text-nowrap mb-0">
+                                            <thead>
+                                                <tr class="text-muted fw-semibold">
+                                                    <th scope="col" class="ps-0">Editor</th>
+                                                    <!-- <th scope="col">Biography</th> -->
+                                                    <th scope="col">Designation</th>
+                                                    <th scope="col">Intrestes</th>
+                                                    <th scope="col">Website</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="border-top" id="editordatacontaierID">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="editordetailsModalID">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-12 my-4">
+                            <label for="">Author Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="authorName">
+                        </div>
+                        <!-- <div class="col-md-6 col-sm-12 col-12 my-4">
+                            <label for="">Upload Image <span class="text-danger">*</span></label>
+                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control" id="authorImage">
+                        </div> -->
+                        <div class="col-md-12 col-sm-12 col-12 my-4">
+                            <label for="">Designation <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="DesignationID">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-12 my-4">
+                            <label for="">Afflication <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="afflication">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-12 my-4">
+                            <label for="">Intrests <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="intrestID">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-12 my-4">
+                            <label for="websiteInput">Website URL<span class="text-danger">*</span></label>
+                            <input type="text" id="websiteInput" class="form-control" placeholder="https://example.com" />
+                          </div>
+                        <div class="col-md-12 col-sm-12 col-12 my-4" id="authorbiocontainer"></div>
+                        <div class="col-md-12 col-sm-12 col-12">
+                            <div class="alert alert-danger validationalert d-none" role="alert"></div>
+                        </div>
+                        <div class="col-md-12 my-5"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hide</button> -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="modifyEditorID" class="btn btn-primary" editorid=""
+                        onclick="saveData()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include './MobileSideNavbar.html' %}
+    {% block MobileSideNavbar %}{% endblock %}
+    <!-- JS FILES -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/fontawesome/js/all.min.js"></script>
+    <!--  core files -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/app.init.js"></script>
+    <script src="assets/js/app-style-switcher.js"></script>
+    <script src="assets/js/sidebarmenu.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!--  current page js files -->
+    <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <!-- <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script> -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
+    <script src="assets/jQuery-tagEditor-master/jquery.tag-editor.min.js"></script>
+    <script src="js/ckEditorClass.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sideNavCreater.js"></script>
+    <script src="js/editorManagement.js"></script>
+</body>
+
+</html>

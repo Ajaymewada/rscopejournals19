@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Article</title>
+    <link id="themeColors" rel="stylesheet" href="assets/css/style.min.css" />
+    <link id="themeColors" rel="stylesheet" href="assets/jQuery-tagEditor-master/jquery.tag-editor.css" />
+    <link rel="stylesheet" href="plugins/flexible-paginator/paginator-style.css" />
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assetstwo/images/favicon.png">
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-theme="blue_theme" data-layout="vertical" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="text-nowrap logo-img">
+                        <img src="assets/images/profile/logo-dark.png" class="dark-logo" width="220" alt="" />
+                    </a>
+                    <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8 text-muted"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+                    <ul>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu"></span>
+                        </li>
+                    </ul>
+                    <ul id="sidebarnav"></ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            {% include './Header.html' %}
+            {% block header %}{% endblock %}
+            <!--  Header End -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 d-flex align-items-stretch" style="height: 228px;">
+                        <div class="card w-100 bg-light-info overflow-hidden shadow-none">
+                            <div class="card-body position-relative">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <div class="d-flex align-items-center mb-7">
+                                            <div class="rounded-circle overflow-hidden me-6">
+                                                <img src="assets/images/profile/user-1.jpg" alt="" width="40"
+                                                    height="40">
+                                            </div>
+                                            <h5 class="fw-semibold mb-0 fs-5">Welcome back Admin!</h5>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="welcome-bg-img mb-n7 text-end">
+                                            <img src="assets/images/profile/mainuser.png" alt="" class="img-fluid"
+                                                width="240px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row my-4">
+                            <div class="col-12">
+                                <div class="col-lg-12 d-flex align-items-strech">
+                                    <div class="card w-100">
+                                        <div class="card-body p-0">
+                                            <div class="loader d-none"></div>
+                                            <div
+                                                class="d-sm-flex d-block align-items-center justify-content-between mb-7">
+                                                <div class="mb-3 mb-sm-0">
+                                                    <h5 class="card-title fw-semibold">In Press</h5>
+                                                    <p class="card-subtitle mb-0">Manage In Press Articles</p>
+                                                </div>
+                                                <!-- <div
+                                                    style="display: flex; align-items: center; justify-content: space-between; width: 420px;">
+                                                    <input type="text" class="form-control fs-3"
+                                                        placeholder="Search By Name or ID" id="search"
+                                                        style="width: 208px;">
+                                                    <div style="cursor: pointer;" onclick="serachData()">
+                                                        <i class="ti ti-search"></i>
+                                                    </div>
+                                                    <div style="width: 150px;">
+                                                        <button class="btn btn-primary"
+                                                            onclick="createVolumeHandler()">Create Volume</button>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <!-- <p style="float: right;margin-top: -30px;margin-right: 212px;cursor: pointer;display: inline;color: red;"
+                                                onclick="getAllVolumes()">Clear Search</p> -->
+                                            <div class="table-responsive w-100">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">ArticleID</th>
+                                                            <th scope="col">Title</th>
+                                                            <th scope="col">CreatedAt</th>
+                                                            <th scope="col">Status</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="articlesBodyContainer"></tbody>
+                                                </table>
+                                                <!-- <div class="paginator js-paginator"
+                                                    style="float: right;margin-top: 40px;">
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="modifyArticleModalID">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ArticleOne</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <h5 id="bindedToJournal"></h5>
+                        <div class="col-md-6 col-sm-12 col-12 my-4">
+                            <label for="">Select Volume :</label>
+                            <select name="" id="selectedVolume" class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-12 my-4">
+                            <label for="">Select Issue :</label>
+                            <select name="" id="selectedIssue" class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="Volume1">Issue 1</option>
+                                <option value="Volume2">Issue 2</option>
+                                <option value="Volume3">Issue 3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="alert alert-danger validationalert d-none" role="alert"></div>
+                        </div>
+                        <div class="col-12 my-4"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="height: 45px;" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Close</button>
+                    <button id="modifyEditorID" editorid="" class="btn btn-primary float-end primaryBtnCs"
+                        onclick="moveArticleHandler()"
+                        style="display: flex;align-items: center;justify-content: space-between;">
+                        <span style="margin-right: 10px;">Save</span>
+                        <div class="spinner-border text-light saveinprogress d-none" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include './MobileSideNavbar.html' %}
+    {% block MobileSideNavbar %}{% endblock %}
+
+    <!-- JS FILES -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--  core files -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/app.init.js"></script>
+    <script src="assets/js/app-style-switcher.js"></script>
+    <script src="assets/js/sidebarmenu.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!--  current page js files -->
+    <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <!-- <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script> -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/ckeditor/ckeditor.js"></script>
+    <script src="assets/jQuery-tagEditor-master/jquery.tag-editor.min.js"></script>
+    <script src="plugins/fontawesome/js/all.min.js"></script>
+    <script src="plugins/flexible-paginator/paginator.min.js"></script>
+    <script src="js/ckEditorClass.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sideNavCreater.js"></script>
+    <script src="js/inPressManagement.js"></script>
+</body>
+
+</html>

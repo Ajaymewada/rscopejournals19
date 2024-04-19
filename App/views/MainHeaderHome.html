@@ -1,0 +1,136 @@
+{% block MainHeaderHome %}
+<header class="edu-header header-style-1 header-fullwidth no-topbar">
+    <div id="edu-sticky-placeholder"></div>
+    <div class="header-mainmenu height">
+        <div class="container-fluid">
+            <div class="header-navbar paddingtop header-navbar-padding">
+                <div class="header-brand ml-3">
+                    <div class="logo">
+                        <a href="/">
+                            <img class="logo-light" src="../../assetstwo/images/logo/logo-dark.png" alt="Rscope Logo">
+                            <img class="logo-dark" src="../../assetstwo/images/logo/logo-white.png" alt="Rscope Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-mainnav">
+                    <nav class="mainmenu-nav">
+                        <ul class="mainmenu">
+                            <li><a href="https://rscope.org/journals" target="_blank">All Journals</a></li>
+                            <li><a href="https://rscope.org/journals" target="_blank">All Articles</a></li>
+                            <li><a href="https://rscope.org" target="_blank">About us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right mr-3">
+                    <ul class="header-action">
+                        <li class="header-btn">
+                            <a href="https://rems.rscope.org/" target="_blank" style="color: black;
+                            width: 210px;
+                            border-style: solid;
+                            border-width: 2px;
+                            padding: 15px;
+                            border-radius: 15px;
+                            font-size: 13px;
+                            border-color: #e77821;
+                            
+                            font-weight: 500;">Register/Login/Submit<i class="icon-4" style="margin-left:10px;padding-right:-30px;"></i></a>
+                            
+                        </li>
+                        <li class="mobile-menu-bar d-block d-xl-none">
+                            <button class="hamberger-button">
+                                <i class="icon-54"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-mobile-menu">
+        <div class="inner">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="/">
+                        <img class="logo-light" src="../../assetstwo/images/logo/logo-dark.png" alt="Rscope Logo">
+                        <img class="logo-dark" src="../../assetstwo/images/logo/logo-white.png" alt="Rscope Logo ">
+                    </a>
+                </div>
+                <div class="close-menu">
+                    <button class="close-button">
+                        <i class="icon-73"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="content p-5" style="background-color: #fff;">
+                <h5 class="widget-title"><a href="https://rscope.org/journals"  target="_blank" style="color: black;">All Journals</a></h5>
+
+                <!-- class="underline-link" -->
+
+                <div style="display: block;
+                width: 60%;
+                height: 2px;
+                background-color: #ccc; /* Change the color as needed */
+                margin: 10px 0; "></div>
+                
+                <h5 class="widget-title pt-3"><a href="https://rscope.org/journals" target="_blank"  style="color: black;">All Articles</a></h5>
+
+                <div style="display: block;
+                width: 60%;
+                height: 2px;
+                background-color: #ccc; /* Change the color as needed */
+                margin: 10px 0; "></div>
+                  
+                <h5 class="widget-title pt-3"><a href="https://rscope.org" target="_blank" style="color: black;">About us</a></h5>
+
+
+                
+            </div>
+            
+
+            
+        </div>
+    </div>
+
+    <!-- Start Search Popup  -->    
+    <div class="edu-search-popup">
+        <div class="content-wrap">
+            <div class="site-logo">
+                <img class="logo-light" src="../../assetstwo/images/logo/logo-dark.png" alt="Rscope Logo ">
+                <img class="logo-dark" src="../../assetstwo/images/logo/logo-white.png" alt="Rscope Logo ">
+            </div>
+            <div class="close-button">
+                <button class="close-trigger"><i class="icon-73"></i></button>
+            </div>
+            <div class="inner">
+                <form class="search-form" action="#">
+                    <input type="text" class="edublink-search-popup-field" placeholder="Search Here...">
+                    <button class="submit-button"><i class="icon-2"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<script>
+    function dynamicnavigationHeader() {
+      let JournalInfo = JSON.parse(localStorage.getItem("JournalInfo"));
+      if (JournalInfo && JournalInfo.JournalSlug) {
+        window.location.href = `/${JournalInfo.JournalSlug}`;
+      }
+    }
+  </script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/661612a0a0c6737bd12a2a9d/1hr33hgsm';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+{% endblock %}

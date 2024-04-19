@@ -1,0 +1,34 @@
+{
+  "name": "jms",
+  "homepage": "https://integrative-neuroscience.rscope.org/",
+  "version": "1.0.0",
+  "description": "jms",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "engine": {
+    "version": "v16.19.0"
+  },
+  "npm-version": "8.19.3",
+  "author": "Boda Satish",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "build": "^0.1.4",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "firebase": "^10.3.1",
+    "firebase-admin": "^11.10.1",
+    "jsonwebtoken": "^9.0.1",
+    "mongodb": "^6.0.0",
+    "mongoose": "^6.11.6",
+    "multer": "^1.4.5-lts.1",
+    "swig": "^1.4.2",
+    "uuid": "^9.0.1",
+    "xmlbuilder": "^15.1.1"
+  }
+}

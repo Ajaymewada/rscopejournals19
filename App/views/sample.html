@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyword Input Example</title>
+  <style>
+    #resultBox {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+    .keyword {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <label for="keywordsInput">Keywords:</label>
+    <input type="text" id="keywordsInput" placeholder="Enter keywords...">
+  </div>
+
+  <div id="resultBox">
+    <h1>Entered Keywords:</h1>
+    <div id="keywordList"></div>
+  </div>
+
+  <script>
+    document.getElementById("keywordsInput").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        processKeywords();
+      }
+    });
+
+    function processKeywords() {
+      var keywordsInput = document.getElementById("keywordsInput");
+      var keywordList = document.getElementById("keywordList");
+      var keywords = keywordsInput.value.trim().split(/\s+/);
+
+      // Display the keywords in the result box
+      keywords.forEach(function(keyword) {
+        var keywordElement = document.createElement("div");
+        keywordElement.textContent = keyword;
+        keywordElement.className = "keyword";
+        keywordList.appendChild(keywordElement);
+      });
+
+      // Clear the input field after processing
+      keywordsInput.value = "";
+    }
+  </script>
+
+</body>
+</html>
