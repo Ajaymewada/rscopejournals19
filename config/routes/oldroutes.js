@@ -248,6 +248,7 @@ router.get('/getjournal', addjournal.getJournal);
 router.post('/deleteEditor', editorialboard.deleteEditor);
 router.get('/getaims-and-scope', aimsandscope.getAimsAndScope);
 router.get('/getEditorialBoard', editorialboard.getEditorialBoard);
+router.get('/getLatestEditorialBoard', editorialboard.getLatestEditorialBoard);
 router.get('/getInstructionsForAuthor', instructions.getInstructionsForAuthor);
 router.get('/getProcessingCharge', processingcharge.getProcessingCharge);
 router.get('/getWhySubmit', whysubmit.getWhySubmit);
