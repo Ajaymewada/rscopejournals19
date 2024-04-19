@@ -18,10 +18,10 @@ async function saveEditorialBoard(req, res) {
       editorialBoardData.image = `editorsImages/${filename}`;
     } else {
       return res
-      .status(200)
-      .json({
-        message: "An error occurred while creating the editorial board",
-      });
+        .status(200)
+        .json({
+          message: "An error occurred while creating the editorial board",
+        });
     }
     const editorialBoard = await new EditorialBoard(editorialBoardData);
     await editorialBoard.save();
@@ -38,6 +38,17 @@ async function saveEditorialBoard(req, res) {
       .json({
         message: "An error occurred while creating the editorial board",
       });
+  }
+}
+
+async function getLatestEditorialBoard(req, res) {
+  try {
+    const latestEditorialBoardMembers = await EditorialBoard.find()
+      .sort({ _id: 1 })
+      .limit(6);
+    res.status(200).json({ status: true, data: latestEditorialBoardMembers });
+  } catch (error) {
+    res.status(200).json({ status: false, data: "Unable to Load!" });
   }
 }
 
@@ -166,5 +177,6 @@ module.exports = {
   updateEditorialBoard,
   searcheditorialboard,
   deleteEditor,
-  findEditorialByJournalId
+  findEditorialByJournalId,
+  getLatestEditorialBoard
 };
