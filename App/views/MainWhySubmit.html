@@ -19,7 +19,10 @@
     />
     <!-- CSS
 	============================================ -->
-    <link rel="stylesheet" href="../../assetstwo/css/vendor/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="../../assetstwo/css/vendor/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="../../assetstwo/css/vendor/icomoon.css" />
     <link rel="stylesheet" href="../../assetstwo/css/vendor/remixicon.css" />
     <link
@@ -28,8 +31,14 @@
     />
     <link rel="stylesheet" href="../../assetstwo/css/vendor/odometer.min.css" />
     <link rel="stylesheet" href="../../assetstwo/css/vendor/lightbox.min.css" />
-    <link rel="stylesheet" href="../../assetstwo/css/vendor/animation.min.css" />
-    <link rel="stylesheet" href="../../assetstwo/css/vendor/jqueru-ui-min.css" />
+    <link
+      rel="stylesheet"
+      href="../../assetstwo/css/vendor/animation.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assetstwo/css/vendor/jqueru-ui-min.css"
+    />
     <link
       rel="stylesheet"
       href="../../assetstwo/css/vendor/swiper-bundle.min.css"
@@ -152,40 +161,27 @@
                             </div>
                           </div>
 
-                          <h1 class="title mt-5">
-                            <a
-                              style="
-                                font-size: 18px;
-                                color: #ef7720;
-                                margin-left: -10px;
-                              "
-                              >Why Submit ?</a
-                            >
-                          </h1>
                           <div class="row mt-5">
                             <div class="flex_1">
+                              <h1 class="title my-5 mx-3">
+                                <a
+                                  style="
+                                    font-size: 18px;
+                                    color: #ef7720;
+                                    margin-left: -10px;
+                                  "
+                                  >Why Submit ?</a
+                                >
+                              </h1>
                               <div
                                 id="whysubmit_container"
                                 class="background p-5"
                               ></div>
                             </div>
-
-                            <div class="flex_2">
-                              <div class="background">
-                                <h1 class="title">
-                                  <a
-                                    style="
-                                      font-size: 18px;
-                                      margin-top: 10px;
-                                      padding-left: 30px;
-                                      margin-bottom: -100px;
-                                    "
-                                    >Latest Articles</a
-                                  >
-                                </h1>
-                                <div id="rightSideNavContainer"></div>
-                              </div>
-                            </div>
+                            <!-- LATEST ARTICLES SECTION -->
+                            {% include './LatestArticles.html' %} {% block
+                            latestarticles %}{% endblock %}
+                            <!-- LATEST ARTICLES SECTION -->
                           </div>
                         </div>
                       </div>
@@ -256,6 +252,7 @@
     <script src="../../assetstwo/js/mainaimsscope.js"></script>
     <script src="../../assetstwo/js/MainWhySubmit.js"></script>
     <script src="../../assetstwo/js/mainCurrentIssue.js"></script>
+    <script src="../../assetstwo/js/MainLatestArticles.js"></script>
 
     <script>
       // Add an event listener for each menu item

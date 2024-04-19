@@ -28,14 +28,6 @@
           <h1 class="bg-success p-3 text-white text-center">
             Generate XML File
           </h1>
-          <p class="text-danger my-3">Enter the url's separated by commas</p>
-          <textarea
-            class="form-control"
-            id="Urls"
-            name="textData"
-            placeholder="Enter Url's"
-            rows="13"
-          ></textarea>
           <div class="w-100 d-flex justify-content-center">
             <button
               type="submit"
@@ -55,9 +47,9 @@
     <script>
       function generateXMLFileDownload(e) {
         e.preventDefault();
-        let urls = $("#Urls").val();
-        if (urls && urls !== "") {
-          urls = urls.split(",");
+        // let urls = $("#Urls").val();
+        // if (urls && urls !== "") {
+          // urls = urls.split(",");
           const url = "/generatexmlfile";
           const requestOptions = {
             method: "POST",
@@ -65,7 +57,7 @@
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              listofurls: urls,
+              listofurls: [],
             }),
           };
           fetch(url, requestOptions)
@@ -89,7 +81,7 @@
               a.click();
               window.URL.revokeObjectURL(url);
             });
-        }
+        // }
       }
     </script>
   </body>

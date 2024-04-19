@@ -152,134 +152,29 @@
                             </div>
                           </div>
 
-                          <h1 class="title mt-5">
-                            <a
-                              style="
-                                font-size: 18px;
-                                color: #ef7720;
-                                margin-left: -10px;
-                              "
-                              >Editorial Office</a
-                            >
-                          </h1>
+                          
                           <div class="row mt-5">
                             <div class="flex_1">
+                              <h1 class="title my-5 mx-3">
+                                <a
+                                  style="
+                                    font-size: 18px;
+                                    color: #ef7720;
+                                    margin-left: -10px;
+                                  "
+                                  >Editorial Office</a
+                                >
+                              </h1>
                               <div
                                 id="editorial_office_Container"
                                 class="background p-5"
                               ></div>
                             </div>
 
-                            <div class="flex_2">
-                              <div class="background">
-                                <h1 class="title">
-                                  <a
-                                    style="
-                                      font-size: 18px;
-                                      margin-top: 10px;
-                                      padding-left: 30px;
-                                      margin-bottom: -100px;
-                                    "
-                                    >Latest Articles</a
-                                  >
-                                </h1>
-                                <div id="rightSideNavContainer">
-                                  <div class="col-lg-12">
-                                    <div class="row">
-                                      <div class="inner">
-                                        <div
-                                          class="content"
-                                          style="margin-top: -15px"
-                                        >
-                                          <div>
-                                            <h6 class="title"></h6>
-                                            <div
-                                              style="
-                                                border-bottom: 2px solid #e0e0e0;
-                                                width: 80%;
-                                                margin-bottom: 15px;
-                                              "
-                                            ></div>
-                                          </div>
-                                          <p class="title">
-                                            <a
-                                              title="Acoustics"
-                                              class="cursor-pointer"
-                                              onclick="increaseViews('65fae5b9a02185737d96d947')"
-                                              style="font-size: 16px"
-                                              >Acoustics</a
-                                            >
-                                          </p>
-                                          <p style="margin-bottom: 5px"></p>
-                                          <p class="course-meta mt-3">
-                                            <strong
-                                              style="
-                                                margin-right: 5px;
-                                                font-weight: 200;
-                                                font-size: 13px;
-                                              "
-                                              >Author :</strong
-                                            >
-
-                                            <span
-                                              style="
-                                                color: #f07317;
-                                                margin-right: 5px;
-                                                font-size: 12px;
-                                                font-weight: 600;
-                                              "
-                                            >
-                                              <i
-                                                class="fa-regular fa-user"
-                                                style="
-                                                  color: black;
-                                                  padding: 0px;
-                                                  font-size: 10px;
-                                                  border-radius: 50px;
-                                                  margin-right: 3px;
-                                                "
-                                              ></i>
-                                              test
-                                            </span>
-                                          </p>
-                                          <p></p>
-                                          <div class="course-rating">
-                                            <span class="rating-count"></span>
-                                          </div>
-                                          <p
-                                            class=""
-                                            style="
-                                              color: gray;
-                                              font-size: 10px !important;
-                                            "
-                                          >
-                                            Foods 2024, 13(1), 151;
-                                            https://doi.org/10.3390/foods13010151
-                                            (registering DOI) - Mar 12, 1999
-                                          </p>
-
-                                          <a class="doi" style="font-size: 10px"
-                                            >doi: 10.3389/fnagi.2023.1340706</a
-                                          >
-
-                                          <ul
-                                            class="course-meta"
-                                            style="margin-top: 0px"
-                                          >
-                                            <li>
-                                              <span
-                                                class="date orange course-price1"
-                                                style="font-size: 10px"
-                                                >Published on Mar 12, 1999</span
-                                              >
-                                            </li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                 <!-- LATEST ARTICLES SECTION -->
+                                 {% include './LatestArticles.html' %} {% block
+                                  latestarticles %}{% endblock %}
+                                  <!-- LATEST ARTICLES SECTION -->
                             </div>
                           </div>
                         </div>
@@ -350,6 +245,8 @@
 
     <!-- <script src="../../assetstwo/js/mainaimsscope.js"></script> -->
     <script src="../../assetstwo/js/MainEditorialOffice.js"></script>
+    <script src="../../assetstwo/js/MainLatestArticles.js"></script>
+
     <!-- <script src="../../assetstwo/js/mainCurrentIssue.js"></script> -->
 
     <script>

@@ -164,24 +164,24 @@ function getAllInPressArticles() {
 
 
 // arun updated ----------------------------------------------------------------------------------------------------/
-async function increaseViews(articleId) {
-    if (articleId != null) {
-      try {
-        const response = await fetch(/updateArticleViews, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            "article_id": articleId
-          })
-        });
-        let data = await response.json();
-        console.log(response);
-        window.open(/articlepage?article_id=${articleId}, '_blank');
-      } catch (error) {
-        // Handle errors
-        console.error("Error updating views:", error);
-      }
-    }
-  }
+// async function increaseViews(articleId) {
+//     if (articleId != null) {
+//       try {
+//         const response = await fetch(/updateArticleViews, {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: JSON.stringify({
+//             "article_id": articleId
+//           })
+//         });
+//         let data = await response.json();
+//         console.log(response);
+//         window.open(/articlepage?article_id=${articleId}, '_blank');
+//       } catch (error) {
+//         // Handle errors
+//         console.error("Error updating views:", error);
+//       }
+//     }
+//   }
